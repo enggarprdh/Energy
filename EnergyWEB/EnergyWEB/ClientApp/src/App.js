@@ -5,6 +5,8 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import Ebutton from './components/eButton';
+import Login from './container/Login';
+
 
 import './custom.css'
 
@@ -23,6 +25,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data' component={FetchData} />
+        <Route path='/login' component={Login} />
         
         {this.isShowButton ? <Ebutton event={this.showMessage} displayText="Login"/>:""}
 

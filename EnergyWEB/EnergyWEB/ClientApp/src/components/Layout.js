@@ -4,11 +4,12 @@ import { NavMenu } from './NavMenu';
 
 export class Layout extends Component {
   static displayName = Layout.name;
+  showNavMenu = false;
 
   render () {
     return (
       <div>
-        <NavMenu />
+        {this.showNavMenu?<NavMenu />:""}
         <Container>
           {this.props.children}
         </Container>
