@@ -1,41 +1,52 @@
 import React from "react";
+import {Button} from "reactstrap";
 
 const Ebutton = (props) => {
     function setColour(value) {
-        var colour = "btn-primary";
+        var colour = "primary";
         if(value != null) {
             switch(value.toLowerCase()){
                 case "green":
-                    colour = "btn-success";
+                    colour = "success";
                     break;
                 case "red":
-                    colour = "btn-danger";
+                    colour = "danger";
                     break;
                 default:
-                    colour = "btn-primary";
+                    colour = "primary";
                     break;
             }
         }
         return colour;
     }
     function setSize(value){
-        var size = "btn-sm";
+        var size = "sm";
         if(value != null) {
             switch(value.toLowerCase()){
                 case "large":
-                    size = "btn-lg";
+                    size = "lg";
                     break;
                 case "small":
-                    size = "btn-sm";
+                    size = "sm";
                     break;
                 default:
-                    size = "btn-sm";
+                    size = "sm";
                     break;
             }
         }
         return size;
     }
-    return <button type={"button"} onClick={props.event} className={"btn " + setColour(props.colour) + " " + setSize(props.size)}>{props.displayText}</button>
+
+    return (
+            <div>
+                <Button 
+                block = {props.block}
+                color={setColour(props.colour)} 
+                onClick={props.event} 
+                size={setSize(props.size)} 
+                >{props.displayText}</Button>
+            </div>
+    )
 }
 
 
